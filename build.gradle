@@ -28,50 +28,25 @@ repositories {
 }
 
 
-//configurations {
-//    querydslapt
-//}
-//
-//sourceSets {
-//    generated {
-//        java.srcDirs = ['src/main/generated']
-//    }
-//    main {
-//        compileClasspath += sourceSets.generated.java
-//    }
-//}
-
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-data")
-//    compile("org.springframework.boot:spring-boot-starter-actuator")
-//    compile('com.mysema.querydsl:querydsl-jpa:3.3.1')
     compile("com.h2database:h2")
     compile("org.apache.tomcat.embed:tomcat-embed-jasper")
     compile("javax.servlet:jstl")
-//    compile('com.google.guava:guava:12.0')
 
-//    groovy("org.codehaus.groovy:groovy-all:1.8.6")
     groovy("org.codehaus.groovy:groovy-all:2.3.6")
 
     testCompile("org.springframework.boot:spring-boot-starter-test")
-    testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
-    testCompile 'org.spockframework:spock-spring:0.7-groovy-2.0'
-    testCompile 'com.jayway.jsonpath:json-path:0.9.1'
-    testCompile 'com.jayway.jsonpath:json-path-assert:0.9.1'
-    testCompile 'cglib:cglib-nodep:3.1'
+    testCompile('org.spockframework:spock-core:0.7-groovy-2.0')
+    testCompile('org.spockframework:spock-spring:0.7-groovy-2.0')
+    testCompile('com.jayway.jsonpath:json-path:0.9.1')
+    testCompile('com.jayway.jsonpath:json-path-assert:0.9.1')
+    testCompile('cglib:cglib-nodep:3.1')
 
-    testCompile 'org.seleniumhq.selenium:selenium-java:2.43.1'
+    testCompile('org.seleniumhq.selenium:selenium-java:2.43.1')
 
-//    querydslapt('com.mysema.querydsl:querydsl-apt:3.3.0')
-}
-
-eclipse {
-    classpath {
-        containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
-        containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7'
-    }
 }
 
 task wrapper(type: Wrapper) {
@@ -81,16 +56,4 @@ task wrapper(type: Wrapper) {
 task integrationTest(type: Test) {
     include '**/*IntegrationTest.*'
     dependsOn run
-//    finalizedBy tomcatStop
 }
-
-//task generateQueryDSL(type: JavaCompile, group: 'build', description: 'Generates the QueryDSL query types') {
-//    source = sourceSets.main.java
-//    classpath = configurations.compile + configurations.querydslapt
-//    options.compilerArgs = [
-//            "-proc:only",
-//            "-processor", "com.mysema.query.apt.jpa.JPAAnnotationProcessor"
-//    ]
-//    destinationDir = sourceSets.generated.java.srcDirs.iterator().next()
-//}
-//compileJava.dependsOn generateQueryDSL

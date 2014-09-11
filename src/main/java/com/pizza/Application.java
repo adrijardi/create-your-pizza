@@ -6,7 +6,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.context.embedded.ErrorPage;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.format.FormatterRegistry;
@@ -14,8 +13,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-
-import java.util.Arrays;
 
 @Configuration
 @EnableAutoConfiguration
@@ -25,15 +22,7 @@ import java.util.Arrays;
 public class Application extends WebMvcConfigurerAdapter {
 
     public static void main(String[] args) {
-        ApplicationContext ctx = SpringApplication.run(Application.class, args);
-
-        System.out.println("Let's inspect the beans provided by Spring Boot:");
-
-        String[] beanNames = ctx.getBeanDefinitionNames();
-        Arrays.sort(beanNames);
-        for (String beanName : beanNames) {
-            System.out.println(beanName);
-        }
+        SpringApplication.run(Application.class, args);
     }
 
     @Bean
@@ -49,22 +38,6 @@ public class Application extends WebMvcConfigurerAdapter {
     public Pizza order() {
         return new Pizza();
     }
-
-//    @Bean(name="conversionService")
-//    public ConversionService getConversionService() {
-//        ConversionServiceFactoryBean bean = new ConversionServiceFactoryBean();
-//        bean.setConverters(getConverters());
-//        bean.afterPropertiesSet();
-//        return bean.getObject();
-//    }
-//
-//    private Set<GenericConverter> getConverters() {
-//        Set<GenericConverter> converters = new HashSet<>();
-//
-//        converters.add(new EntityConverter());
-//
-//        return converters;
-//    }
 
     @Override
     public void addFormatters(FormatterRegistry formatterRegistry)     {
