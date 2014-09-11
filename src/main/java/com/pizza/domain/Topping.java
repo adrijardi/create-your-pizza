@@ -12,7 +12,7 @@ import java.math.BigDecimal;
  */
 @Entity
 @Table(name = "Topping")
-public class Topping implements Priced {
+public class Topping implements Priced, PricedSupport {
 
     @Id
     @GeneratedValue

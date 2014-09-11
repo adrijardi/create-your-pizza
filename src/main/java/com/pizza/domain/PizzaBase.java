@@ -11,7 +11,7 @@ import java.math.BigDecimal;
  * Created by Adrian Lopez on 10/09/2014.
  */
 @Entity
-public class PizzaBase implements Priced {
+public class PizzaBase implements Priced, PricedSupport {
 
     @Id
     @GeneratedValue

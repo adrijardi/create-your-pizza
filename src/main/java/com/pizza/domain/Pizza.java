@@ -10,7 +10,7 @@ import static java.math.BigDecimal.ZERO;
 /**
  * Defines the components of a pizza object
  */
-public class Pizza {
+public class Pizza implements Priced {
 
     private PizzaBase pizzaBase;
     private Set<Topping> toppings = new HashSet<>();
@@ -31,7 +31,7 @@ public class Pizza {
         this.pizzaBase = pizzaBase;
     }
 
-    public BigDecimal getTotalPrice() {
+    public BigDecimal getPrice() {
         BigDecimal toppingPrice = getToppings().stream().map(Topping::getPrice).reduce(ZERO, (a,b) -> a.add(b));
         return toppingPrice.add(Optional.ofNullable(getPizzaBase()).map(PizzaBase::getPrice).orElse(ZERO));
     }

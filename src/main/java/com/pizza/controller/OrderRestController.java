@@ -37,7 +37,7 @@ public class OrderRestController {
 
     @RequestMapping(value = "price", method = RequestMethod.GET)
     public BigDecimal getPrice() {
-        return pizza.getTotalPrice();
+        return pizza.getPrice();
     }
 
 }
