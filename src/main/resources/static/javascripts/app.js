@@ -8,15 +8,12 @@ pizzaApp.controller('ToppingsCtrl', function($scope, $http, $log) {
 
 
     $scope.base = function() {
-        $log.debug("Changed base "+$scope.pizzaBase);
         $http.put('/order/base?pizzaBase='+$scope.pizzaBase).then(function () {
             recalculatePrice();
         });
     };
 
     $scope.topping = function(id) {
-        $log.debug("Changed topping "+ event);
-        $log.debug($scope.pizzaToppings);
         var url = '/order/topping?topping='+id;
 
         if($scope.pizzaToppings[id]) {
