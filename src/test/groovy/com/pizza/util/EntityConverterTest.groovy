@@ -1,7 +1,7 @@
 package com.pizza.util
 
 import com.pizza.dao.ToppingRepository
-import com.pizza.domain.Order
+import com.pizza.domain.Pizza
 import com.pizza.domain.PizzaBase
 import com.pizza.domain.Topping
 import org.springframework.core.convert.TypeDescriptor
@@ -25,7 +25,7 @@ class EntityConverterTest extends Specification {
         createTypeDesc(String.class)  | createTypeDesc(Topping.class)            || true
         createTypeDesc(Long.class)    | createTypeDesc(Topping.class)            || true
         createTypeDesc(Long.class)    | createTypeDesc(ToppingRepository.class)  || false
-        createTypeDesc(Date.class)    | createTypeDesc(Order.class)              || false
+        createTypeDesc(Date.class)    | createTypeDesc(Pizza.class)              || false
     }
 
     TypeDescriptor createTypeDesc(Class<?> clazz) {
