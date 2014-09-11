@@ -6,3 +6,7 @@ An amazing website where you can create your very own pizza, just make it how yo
 Requisites:
 - Java 8
 - Firefox for the Selenium integration tests
+
+To run:
+gradlew clean
+gradlew run
