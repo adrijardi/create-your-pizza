@@ -13,7 +13,7 @@ import java.util.Optional;
 import java.util.Set;
 
 /**
- * Converts any entity from a string if the string can be parsed to a long value and the object can be found in the database
+ * Converts any entity from a string, if the string can be parsed to a long value and the object can be found in the database
  */
 public class EntityConverter implements ConditionalGenericConverter {
 

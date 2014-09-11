@@ -4,7 +4,7 @@ import com.pizza.domain.PizzaBase;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * Created by Adrian Lopez on 10/09/2014.
+ * Spring data jpa Repository for the Pizza bases
  */
 public interface PizzaBaseRepository extends JpaRepository<PizzaBase, Long> {
 }

@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
+/**
+ * Provides access to the homepage and the relative model attributes
+ */
 @Controller
 public class PizzaController {
 

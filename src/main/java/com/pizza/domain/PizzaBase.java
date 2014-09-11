@@ -6,9 +6,6 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
-/**
- * Created by Adrian Lopez on 10/09/2014.
- */
 @Entity
 public class PizzaBase implements Priced, PricedSupport {
 

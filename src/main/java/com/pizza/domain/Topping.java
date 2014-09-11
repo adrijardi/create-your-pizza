@@ -7,9 +7,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
-/**
- * Created by Adrian Lopez on 10/09/2014.
- */
 @Entity
 @Table(name = "Topping")
 public class Topping implements Priced, PricedSupport {

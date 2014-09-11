@@ -12,5 +12,5 @@ To run:
 - gradlew run
 
 Peculiarities:
-- The application is created using Spring Boot and JavaConfig
+- The application is created using Spring Boot and JavaConfig, it incorporates an embbeded Tomcat, however a war version could also be obtained
 - The test context is defined in xml and maintained separated from the execution context
